@@ -1,7 +1,5 @@
 #!/bin/bash
 
-PHP=/usr/bin/php
-
 root=`pwd`
 application_path=$root"/src/application"
 config_path=$root"/src/config"
@@ -13,8 +11,11 @@ black='\E[0m\c'
 red='\E[31m\c'
 c_notify='\E[1;36m\c'
 
-
-
+PHP=`command -v php`
+if [ -z "${PHP}" ];then
+	echo "php not found"
+	exit 1
+fi
 
 
 cprint()

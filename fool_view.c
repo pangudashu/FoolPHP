@@ -18,8 +18,6 @@ zend_class_entry* fool_view_ce;
 ZEND_BEGIN_ARG_INFO_EX(fool_view_construct_arginfo, 0, 0, 0)
 ZEND_END_ARG_INFO()
 
-
-
 /**{{{ zval* get_instance(TSRMLS_D)
  */
 zval* fool_view_instance(TSRMLS_D)
@@ -184,7 +182,6 @@ PHP_METHOD(fool_view,__construct)
 {
 }
 /*}}}*/
-
 
 zend_function_entry fool_view_methods[] = {
 	ZEND_ME(fool_view,__construct,fool_view_construct_arginfo,ZEND_ACC_PUBLIC|ZEND_ACC_CTOR)

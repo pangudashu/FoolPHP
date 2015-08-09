@@ -19,10 +19,13 @@ zend_class_entry* fool_exception_ce;
 ZEND_BEGIN_ARG_INFO_EX(fool_exception_construct_arginfo, 0, 0, 0)
 ZEND_END_ARG_INFO()
 
+/*{{{ void fool_throw_exception(long code,char* msg TSRMLS_DC)
+ */
 void fool_throw_exception(long code,char* msg TSRMLS_DC)
 {
 	zend_throw_exception(fool_exception_ce,msg,code TSRMLS_CC);
 }
+/*}}}*/
 
 /*{{{ zend_class_entry * fool_get_exception_base(int root TSRMLS_DC)
  * copy from yaf
@@ -50,14 +53,12 @@ zend_class_entry * fool_get_exception_base(int root TSRMLS_DC) {
 }
 /*}}}*/
 
-
 /*{{{ Fool_Application::__construct(void)
  */
 PHP_METHOD(fool_exception,__construct)
 {
 }
 /*}}}*/
-
 
 zend_function_entry fool_exception_methods[] = {
 	ZEND_ME(fool_exception,__construct,fool_exception_construct_arginfo,ZEND_ACC_PUBLIC|ZEND_ACC_CTOR)

@@ -18,7 +18,7 @@
 
 zend_class_entry* fool_application_ce;
 
-/*#define ZEND_BEGIN_ARG_INFO_EX(name, pass_rest_by_reference, return_reference, required_num_args)*/
+/*ZEND_BEGIN_ARG_INFO_EX(name, pass_rest_by_reference, return_reference, required_num_args)*/
 ZEND_BEGIN_ARG_INFO_EX(fool_application_construct_arginfo, 0, 0, 0)
 ZEND_END_ARG_INFO()
 
@@ -32,7 +32,6 @@ ZEND_END_ARG_INFO()
 
 
 /*{{{ zval* fool_application_instance(TSRMLS_D)
- *  在此初始化类属性
  */
 zval* fool_application_instance(TSRMLS_D)
 {
@@ -43,7 +42,7 @@ zval* fool_application_instance(TSRMLS_D)
 	instance = zend_read_static_property(fool_application_ce,ZEND_STRL(FOOL_APPLICATION_PROPERTY_NAME_INSTANCE),1 TSRMLS_CC);
 
 	if(Z_TYPE_P(instance) == IS_OBJECT){
-		//Z_ADDREF_P(instance);  ?????????????????
+		//Z_ADDREF_P(instance);
 		return instance;
 	}
 
@@ -111,6 +110,8 @@ PHP_METHOD(fool_application,getInstance)
 }
 /*}}}*/
 
+/*{{{ public Fool_Application::run(void)
+ */
 PHP_METHOD(fool_application,run)
 {
 	zval* response;
@@ -125,6 +126,7 @@ PHP_METHOD(fool_application,run)
 	}
 	RETURN_FALSE;
 }
+/*}}}*/
 
 
 zend_function_entry fool_application_methods[] = {

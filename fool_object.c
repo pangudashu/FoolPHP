@@ -86,7 +86,6 @@ int fool_object_set(zval* object,char* class_name,int name_len,zval* value TSRML
 }
 /*}}}*/
 
-
 /*{{{ public Fool_Object::__construct(void)
  */
 PHP_METHOD(fool_object,__construct)

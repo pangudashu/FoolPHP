@@ -50,8 +50,6 @@ PHP_RSHUTDOWN_FUNCTION(foolphp);
 PHP_MINFO_FUNCTION(foolphp);
 
 
-
-
 ZEND_BEGIN_MODULE_GLOBALS(foolphp)
 	char *application_path;
 	char *config_path;

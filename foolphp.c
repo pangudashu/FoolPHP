@@ -78,6 +78,8 @@ PHP_GINIT_FUNCTION(foolphp)
 }
 /* }}} */
 
+/*{{{ PHP_MINIT_FUNCTION(foolphp)
+ */
 PHP_MINIT_FUNCTION(foolphp)
 {
 	//register php.ini
@@ -95,6 +97,7 @@ PHP_MINIT_FUNCTION(foolphp)
 
 	return SUCCESS;
 }
+/*}}}*/
 
 /* {{{ PHP_MSHUTDOWN_FUNCTION
  */
@@ -104,7 +107,6 @@ PHP_MSHUTDOWN_FUNCTION(foolphp)
 }
 /* }}} */
 
-/* Remove if there's nothing to do at request start */
 /* {{{ PHP_RINIT_FUNCTION
  */
 PHP_RINIT_FUNCTION(foolphp)
@@ -113,7 +115,6 @@ PHP_RINIT_FUNCTION(foolphp)
 }
 /* }}} */
 
-/* Remove if there's nothing to do at request end */
 /* {{{ PHP_RSHUTDOWN_FUNCTION
  */
 PHP_RSHUTDOWN_FUNCTION(foolphp)
@@ -145,8 +146,6 @@ PHP_MINFO_FUNCTION(foolphp)
 	*/
 }
 /* }}} */
-
-
 
 /*
  * Local variables:

@@ -29,7 +29,7 @@ ZEND_BEGIN_ARG_INFO_EX(fool_controller_assign_arginfo, 0, 0, 0)
 	ZEND_ARG_INFO(0, value)
 ZEND_END_ARG_INFO()
 
-/**{{{ zval* get_instance(TSRMLS_D)
+/*{{{ zval* get_instance(TSRMLS_D)
  */
 zval* fool_controller_instance(TSRMLS_D)
 {
@@ -75,13 +75,12 @@ PHP_METHOD(fool_controller,getInstance)
 */
 /*}}}*/
 
+/*{{{ int fool_controller_dispatch_handler(zend_class_entry* ce,zval* controller,zval* request,zval* view TSRMLS_DC)
+ */
 int fool_controller_dispatch_handler(zend_class_entry* ce,zval* controller,zval* request,zval* view TSRMLS_DC)
-{/*{{{*/
-	/*init -- start*/
-	//zend_update_property_string(fool_controller_ce,controller, ZEND_STRL("view_path"),"/root/view" TSRMLS_CC);
+{
 	zend_update_property(fool_controller_ce,controller, ZEND_STRL(FOOL_CONTROLLER_PROPERTY_NAME_REQUEST),request TSRMLS_CC);
 	zend_update_property(fool_controller_ce,controller, ZEND_STRL(FOOL_CONTROLLER_PROPERTY_NAME_VIEW),view TSRMLS_CC);
-	/*init -- end*/
 
 	zval* action = fool_request_get_action(request TSRMLS_CC);
 	char* action_lower = estrdup(Z_STRVAL_P(action));
@@ -125,7 +124,8 @@ int fool_controller_dispatch_handler(zend_class_entry* ce,zval* controller,zval*
 	zval_ptr_dtor(&method_name);
 
 	return 1;
-}/*}}}*/
+}
+/*}}}*/
 
 /*{{{ public Fool_Controller::getController(void)
  */

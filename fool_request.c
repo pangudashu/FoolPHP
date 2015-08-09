@@ -25,8 +25,6 @@ ZEND_END_ARG_INFO()
 ZEND_BEGIN_ARG_INFO_EX(fool_request_getaction_arginfo, 0, 0, 0)
 ZEND_END_ARG_INFO()
 
-
-
 /**{{{ zval* get_instance(TSRMLS_D)
  */
 zval* fool_request_instance(TSRMLS_D)

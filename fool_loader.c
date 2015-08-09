@@ -202,6 +202,8 @@ PHP_METHOD(fool_loader,getInstance)
 }
 /*}}}*/
 
+/*{{{ int fool_loader_autoload(char* class_name TSRMLS_DC)
+ */
 int fool_loader_autoload(char* class_name TSRMLS_DC)
 {
 	zval** class_map;
@@ -221,12 +223,11 @@ int fool_loader_autoload(char* class_name TSRMLS_DC)
 		return 0;
 	}
 
-	//php_printf("[Fool_Loader::fool_loader_autoload]begin to include :%s\n",Z_STRVAL_PP(class_file));
-
 	fool_loader_include(Z_STRVAL_PP(class_file) TSRMLS_CC);
 
 	return 1;
 }
+/*}}}*/
 
 /*{{{ Fool_Loader::autoload(string $class_name)
  */

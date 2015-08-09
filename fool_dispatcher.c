@@ -74,6 +74,8 @@ zend_class_entry* fool_dispatcher_get_controller(char* controller_name TSRMLS_DC
 }
 /*}}}*/
 
+/*{{{ zval* fool_dispatcher_dispatch(zval* dispatcher TSRMLS_DC)
+ */
 zval* fool_dispatcher_dispatch(zval* dispatcher TSRMLS_DC)
 {
 	zval* response;
@@ -119,6 +121,7 @@ zval* fool_dispatcher_dispatch(zval* dispatcher TSRMLS_DC)
 	zval_ptr_dtor(&controller);
 	return NULL;//response;
 }
+/*}}}*/
 
 /*{{{ public Fool_Application::getInstance(void)
  */

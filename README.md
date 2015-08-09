@@ -20,10 +20,10 @@ PHP扩展实现的轻量级MVC框架
 ### 安装
 
 从github下载源码后解压，如解压后目录:FoolPHP-1.0.0<br />
-	cd FoolPHP-1.0.0 <br />
-	phpize <br />
-	./configure <br />
-	make && make install <br />
+	cd FoolPHP-1.0.0
+	phpize
+	./configure
+	make && make install
 
 	最后将extension=foolphp.so加入php.ini
 

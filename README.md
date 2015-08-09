@@ -29,11 +29,11 @@ make && make install <br />
 
 ### 初始化项目
 
-新建一个目录，如/www，将FoolPHP源码下tools目录复制到/www目录下
+1.新建一个目录，如/websites，将FoolPHP源码下tools目录复制到/websites目录下
 
-执行sh tools/install.sh
+2.执行sh tools/install.sh
 
-成功后/www下多了一个src目录，/www/src结构:
+成功后/websites下多了一个src目录，/websites/src结构:
 
 ├── application<br />
 │   ├── controllers<br />
@@ -42,7 +42,7 @@ make && make install <br />
 │   │   └── DemoModel.php<br />
 │   └── views<br />
 │       ├── Common<br />
-│       │   ├── footer.tpl.php<<br />>
+│       │   ├── footer.tpl.php<<br />
 │       │   └── header.tpl.php<br />
 │       └── Demo<br />
 │           └── index.tpl.php<br />
@@ -52,5 +52,12 @@ make && make install <br />
 └── www<br />
     └── index.php<br />
 
+3./websites/src/www为web访问目录，配置web服务器root ：/websites/src/www，访问：http://Domain/index.php?m=demo.index
+
+### tools工具包
+
+1. install.sh新项目初始化脚本 <br />
+2. config.php预处理类配置文件，$application_path值为application目录：/your_websites/src/application，$config_path为配置文件目录：/your_websites/src/config，$scan_dir为自动加载类扫描目录，相对于$application_path的目录名，如controllers、models、librarys <br />
+3.create_map.php预处理类生成脚本，它会扫描config.php中配置的$scan_dir目录下的php文件，生成"类名 => 文件路径"的记录到$config_path/fool_php_class.map文件中，这将是使用最频繁的文件，当新增/修改/删除文件、类、目录时都要重新执行此脚本，否则将会运行出错，使用此脚本执行 php create_map.php即可
 
 

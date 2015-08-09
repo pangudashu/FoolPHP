@@ -20,8 +20,37 @@ PHP扩展实现的轻量级MVC框架
 ### 安装
 
 从github下载源码后解压，如解压后目录:FoolPHP-1.0.0<br />
-		cd FoolPHP-1.0.0
-		phpize
-		./configure
-		make && make install
+cd FoolPHP-1.0.0 <br />
+phpize <br />
+./configure <br />
+make && make install <br />
+
+最后将extension=foolphp.so加入php.ini
+
+### 初始化项目
+
+新建一个目录，如/www，将FoolPHP源码下tools目录复制到/www目录下
+
+执行sh tools/install.sh
+
+成功后/www下多了一个src目录，/www/src结构:
+
+├── application<br />
+│   ├── controllers<br />
+│   │   └── DemoController.php<br />
+│   ├── models<br />
+│   │   └── DemoModel.php<br />
+│   └── views<br />
+│       ├── Common<br />
+│       │   ├── footer.tpl.php<<br />>
+│       │   └── header.tpl.php<br />
+│       └── Demo<br />
+│           └── index.tpl.php<br />
+├── config<br />
+│   ├── config.inc.php<br />
+│   └── fool_php_class.map<br />
+└── www<br />
+    └── index.php<br />
+
+
 

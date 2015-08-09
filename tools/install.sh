@@ -126,7 +126,7 @@ cat>"${application_path}/views/Demo/index.tpl.php"<<EOF
 <?php include \$VIEW_PATH . '/Common/header.tpl.php';?>
 	<h3>Welcome to FoolPHP~</h3>
     <p>This is a MVC framework implemented by PHP extension.</p>
-	<p>Now time is <?php date("Y-m-d H:i:s",\$time);?>></p>
+	<p>Now time is <?php echo date("Y-m-d H:i:s",\$time);?></p>
 <?php include \$VIEW_PATH . '/Common/footer.tpl.php';?>
 EOF
 	echo "build: ${application_path}/views/Common/header.tpl.php -----finish"

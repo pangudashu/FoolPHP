@@ -32,6 +32,10 @@
 #include "fool_loader.h"
 #include "fool_request.h"
 #include "fool_controller.h"
+#include "fool_object.h"
+#include "fool_view.h"
+#include "fool_config.h"
+#include "fool_exception.h"
 
 ZEND_DECLARE_MODULE_GLOBALS(foolphp);
 

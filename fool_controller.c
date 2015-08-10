@@ -5,6 +5,7 @@
 #include "php.h"
 #include "php_ini.h"
 #include "ext/standard/info.h"
+#include "ext/standard/php_string.h"
 #include "Zend/zend_interfaces.h"
 #include "php_foolphp.h"
 
@@ -60,28 +61,6 @@ zval* fool_controller_instance(TSRMLS_D)
 }
 /*}}}*/
 
-/*{{{ public Fool_Controller::__construct(void)
- */
-PHP_METHOD(fool_controller,__construct)
-{
-}
-/*}}}*/
-
-/*{{{ public Fool_Controller::getInstance(void)
- */
-/*
-PHP_METHOD(fool_controller,getInstance)
-{
-	zval* instance = fool_controller_instance(TSRMLS_C);
-	
-	if(instance){
-		RETURN_ZVAL(instance,1,0);
-	}
-	RETURN_FALSE;
-}
-*/
-/*}}}*/
-
 /*{{{ int fool_controller_dispatch_handler(zend_class_entry* ce,zval* controller,zval* request,zval* view TSRMLS_DC)
  */
 int fool_controller_dispatch_handler(zend_class_entry* ce,zval* controller,zval* request,zval* view TSRMLS_DC)
@@ -132,6 +111,28 @@ int fool_controller_dispatch_handler(zend_class_entry* ce,zval* controller,zval*
 
 	return 1;
 }
+/*}}}*/
+
+/*{{{ public Fool_Controller::__construct(void)
+ */
+PHP_METHOD(fool_controller,__construct)
+{
+}
+/*}}}*/
+
+/*{{{ public Fool_Controller::getInstance(void)
+ */
+/*
+PHP_METHOD(fool_controller,getInstance)
+{
+	zval* instance = fool_controller_instance(TSRMLS_C);
+	
+	if(instance){
+		RETURN_ZVAL(instance,1,0);
+	}
+	RETURN_FALSE;
+}
+*/
 /*}}}*/
 
 /*{{{ public Fool_Controller::getController(void)

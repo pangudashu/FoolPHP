@@ -6,6 +6,7 @@
 
 #include "php.h"
 #include "php_ini.h"
+#include "php_main.h"
 #include "ext/standard/info.h"
 #include "php_foolphp.h"
 
@@ -123,8 +124,6 @@ int fool_loader_include(char* path TSRMLS_DC)
 
 	zend_op_array 	*new_op_array;
 	uint 			dummy = 1;
-	//
-	//...
 
 	if (zend_hash_add(&EG(included_files), file_handle.opened_path, strlen(file_handle.opened_path) + 1, (void *)&dummy, sizeof(int), NULL) == SUCCESS) {
 		new_op_array = zend_compile_file(&file_handle, ZEND_REQUIRE TSRMLS_CC);

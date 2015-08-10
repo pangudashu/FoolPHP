@@ -9,5 +9,7 @@
 
 extern zend_class_entry *fool_application_ce;
 
+zval* fool_application_instance(TSRMLS_D);
+
 FOOL_STARTUP_MODULE(application);
 #endif

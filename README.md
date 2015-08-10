@@ -24,7 +24,7 @@ PHP扩展实现的轻量级MVC框架
 	./configure
 	make && make install
 
-	最后将extension=foolphp.so加入php.ini
+	最后将extension=foolphp.so加入php.ini，重启php-fpm或者其他fastcgi
 
 ### 初始化项目
 

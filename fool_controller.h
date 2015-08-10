@@ -10,5 +10,5 @@
 extern zend_class_entry *fool_controller_ce;
 int fool_controller_dispatch_handler(zend_class_entry* ce,zval* controller,zval* request,zval* view TSRMLS_DC);
 
-FOOL_STARTUP(controller);
+FOOL_STARTUP_MODULE(controller);
 #endif

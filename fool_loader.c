@@ -255,7 +255,7 @@ zend_function_entry fool_loader_methods[] = {
 };
 
 
-FOOL_STARTUP(loader)
+FOOL_STARTUP_MODULE(loader)
 {
 	zend_class_entry ce;
 	INIT_CLASS_ENTRY(ce,"Fool_Loader",fool_loader_methods);

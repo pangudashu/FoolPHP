@@ -38,6 +38,7 @@ extern zend_module_entry foolphp_module_entry;
 #include "TSRM.h"
 #endif
 
+#define FOOL_STARTUP_MODULE(module) ZEND_MINIT_FUNCTION(foolphp_##module)
 #define FOOL_STARTUP(module) ZEND_MODULE_STARTUP_N(foolphp_##module)(INIT_FUNC_ARGS_PASSTHRU)
 
 #define FOOL_CLASS_MAP_VAR "fool_php_class_map"

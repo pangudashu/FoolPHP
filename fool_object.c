@@ -134,7 +134,7 @@ zend_function_entry fool_object_methods[] = {
 };
 
 
-FOOL_STARTUP(object)
+FOOL_STARTUP_MODULE(object)
 {
 	zend_class_entry ce;
 	INIT_CLASS_ENTRY(ce,"Fool_Object",fool_object_methods);

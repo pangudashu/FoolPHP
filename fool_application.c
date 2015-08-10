@@ -136,7 +136,7 @@ zend_function_entry fool_application_methods[] = {
 	PHP_FE_END	/* Must be the last line in qpclass_functions[] */
 };
 
-FOOL_STARTUP(application)
+FOOL_STARTUP_MODULE(application)
 {
 	zend_class_entry ce;
 	INIT_CLASS_ENTRY(ce,"Fool_Application",fool_application_methods);

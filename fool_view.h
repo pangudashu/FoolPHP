@@ -15,5 +15,5 @@ zval* fool_view_instance(TSRMLS_D);
 int fool_view_assign(zval* view,char* key,int key_len,zval* value TSRMLS_DC);
 int fool_view_render(zval* view,char* script,zval* ret,int out TSRMLS_DC);
 
-FOOL_STARTUP(view);
+FOOL_STARTUP_MODULE(view);
 #endif

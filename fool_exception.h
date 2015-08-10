@@ -8,5 +8,5 @@
 extern zend_class_entry *fool_exception_ce;
 void fool_throw_exception(long code,char* msg TSRMLS_DC);
 
-FOOL_STARTUP(exception);
+FOOL_STARTUP_MODULE(exception);
 #endif

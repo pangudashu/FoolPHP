@@ -151,7 +151,7 @@ zend_function_entry fool_dispatcher_methods[] = {
 };
 
 
-FOOL_STARTUP(dispatcher)
+FOOL_STARTUP_MODULE(dispatcher)
 {
 	zend_class_entry ce;
 	INIT_CLASS_ENTRY(ce,"Fool_Dispatcher",fool_dispatcher_methods);

@@ -10,5 +10,5 @@
 extern zend_class_entry *fool_object_ce;
 zval* fool_object_instance(TSRMLS_D);
 
-FOOL_STARTUP(object);
+FOOL_STARTUP_MODULE(object);
 #endif

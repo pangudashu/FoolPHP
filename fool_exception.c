@@ -65,7 +65,7 @@ zend_function_entry fool_exception_methods[] = {
 	PHP_FE_END	/* Must be the last line in qpclass_functions[] */
 };
 
-FOOL_STARTUP(exception)
+FOOL_STARTUP_MODULE(exception)
 {
 	zend_class_entry ce;
 	INIT_CLASS_ENTRY(ce,"Fool_Exception",fool_exception_methods);

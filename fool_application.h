@@ -9,5 +9,5 @@
 
 extern zend_class_entry *fool_application_ce;
 
-FOOL_STARTUP(application);
+FOOL_STARTUP_MODULE(application);
 #endif

@@ -161,7 +161,7 @@ zend_function_entry fool_config_methods[] = {
 };
 
 
-FOOL_STARTUP(config)
+FOOL_STARTUP_MODULE(config)
 {
 	zend_class_entry ce;
 	INIT_CLASS_ENTRY(ce,"Fool_Config",fool_config_methods);

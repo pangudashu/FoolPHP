@@ -189,7 +189,7 @@ zend_function_entry fool_view_methods[] = {
 };
 
 
-FOOL_STARTUP(view)
+FOOL_STARTUP_MODULE(view)
 {
 	zend_class_entry ce;
 	INIT_CLASS_ENTRY(ce,"Fool_View",fool_view_methods);

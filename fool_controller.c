@@ -255,7 +255,7 @@ zend_function_entry fool_controller_methods[] = {
 };
 
 
-FOOL_STARTUP(controller)
+FOOL_STARTUP_MODULE(controller)
 {
 	zend_class_entry ce;
 	INIT_CLASS_ENTRY(ce,"Fool_Controller",fool_controller_methods);

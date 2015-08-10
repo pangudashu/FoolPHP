@@ -26,5 +26,5 @@ zval* fool_request_get_controller_name(zval* request TSRMLS_DC);
 zval* fool_request_get_action(zval* request TSRMLS_DC);
 zval* fool_request_get_action_name(zval* request TSRMLS_DC);
 
-FOOL_STARTUP(request);
+FOOL_STARTUP_MODULE(request);
 #endif

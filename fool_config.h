@@ -10,5 +10,5 @@
 extern zend_class_entry *fool_config_ce;
 int fool_config_init(TSRMLS_D);
 
-FOOL_STARTUP(config);
+FOOL_STARTUP_MODULE(config);
 #endif

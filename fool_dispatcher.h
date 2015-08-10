@@ -11,5 +11,5 @@ zval* fool_dispatcher_instance(TSRMLS_D);
 zval* fool_dispatcher_dispatch(zval* dispatcher TSRMLS_DC);
 zend_class_entry* fool_dispatcher_get_controller(char* controller_name TSRMLS_DC);
 
-FOOL_STARTUP(dispatcher);
+FOOL_STARTUP_MODULE(dispatcher);
 #endif

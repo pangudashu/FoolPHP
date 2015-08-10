@@ -220,7 +220,7 @@ zend_function_entry fool_request_methods[] = {
 };
 
 
-FOOL_STARTUP(request)
+FOOL_STARTUP_MODULE(request)
 {
 	zend_class_entry ce;
 	INIT_CLASS_ENTRY(ce,"Fool_Request",fool_request_methods);

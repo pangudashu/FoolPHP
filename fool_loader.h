@@ -9,5 +9,5 @@ extern zend_class_entry *fool_loader_ce;
 zval* fool_loader_instance(TSRMLS_D);
 int fool_loader_register_autoload(zval* loader TSRMLS_DC);
 
-FOOL_STARTUP(loader);
+FOOL_STARTUP_MODULE(loader);
 #endif

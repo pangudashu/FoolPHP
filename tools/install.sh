@@ -89,16 +89,17 @@ EOF
 
 build_app_config()
 {
-cat>"${tool_path}/config.php"<<EOF
+cat>"${tool_root}/config.php"<<EOF
 <?php
 \$application_path = '${application_path}';
+\$config_path = '${config_path}';
 //自动加载类扫描目录:{\$application_root}/application下目录名称
 \$scan_dir = array(
     'controllers',
 	'models',
 );
 EOF
-	echo "build: ${tool_path}/config.php -----finish"
+	echo "build: ${tool_root}/config.php -----finish"
 }
 
 build_view()
@@ -190,6 +191,7 @@ build_model
 #build demo view
 build_view
 
+rm -rf "${tool_root}/config.php"
 build_app_config
 
 cprint "[6/6]创建类库生成脚本..." $c_notify
@@ -197,7 +199,7 @@ var=${tool_root//\//\\\/}
 sed -i "s/__FOOLPHP_TOOLS__ROOT__/${var}/" "tools/create_map.php"
 echo "build: ${tool_root}/create_map.php -----finish"
 #build class map
-$PHP "${tool_root}/create_map.php" >/dev/null 2>&1
+$PHP "${tool_root}/create_map.php"
 
 echo ""
 cprint "=========================[success to install foolphp application]==========================" $c_notify

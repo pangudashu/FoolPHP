@@ -76,6 +76,9 @@ PHP扩展实现的轻量级MVC框架
 APPLICATION_PATH : 应用目录
 CONFIG_PATH : 配置文件目录
 
+### 路由
+框架提供最简单的通过GET参数分发路由(/?m=controller.action)，没有实现rewrite、正则等路由协议
+
 ### 控制器
 控制器名以Controller为后缀，文件名没有要求，可以是任意名称，只要继承了Fool_Controller的类就是一个控制器，控制器中操作(Action)作为请求处理的handler，通过/?m=controller.action访问将dispatch到此Action，操作的命名以Action为后缀
 
@@ -124,12 +127,23 @@ config.inc.php配置文件格式为普通的key=>value：
 views目录下可以按控制器划分子目录
 
 ### 自动加载
-FoolPHP使用spl_autoload_register实现自动加载，当实例化一个类时，如果在EG(class_table)哈希表中找不到这个类，将调用自动加载注册的钩子函数，根据CONFIG_PATH下的fool_php_class.map找到这个类所在的文件，然后include
+FoolPHP使用spl_autoload_register实现自动加载，当实例化一个类时，如果在EG(class_table)哈希表中找不到这个类将调用注册的钩子函数，根据CONFIG_PATH下的fool_php_class.map找到这个类所在的文件，然后include
 
 所以当项目中新增、修改类时都需要执行"php tools/create_map.php"重新生成fool_php_class.map，这种方式使得项目的目录设置更灵活
 
 在项目中可以通过普通的方式实例化一个类:$user = new UserModel();
 
 同时框架提供了一个方法生成单例:Fool_Object::find(string $className)
+
+### 异常
+框架中一些错误通过异常的方式返回，可以在入口文件中捕捉到进行处理:
+
+	try{
+		$application = Fool_Application::getInstance(APPLICATION_PATH,CONFIG_PATH);
+		$application->run();
+	}catch(Fool_Exception $e){
+		echo $e->getCode(),$e->getMessage();
+	}
+
 
 

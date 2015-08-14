@@ -118,4 +118,18 @@ config.inc.php配置文件格式为普通的key=>value：
 
 在项目中通过Fool_Config::find(string $key)获取配置
 
+### 视图
+框架使用php作为模板引擎，视图文件后缀.tpl.php，目录:/websites/src/application/views，这个值在模板中可以通过$VIEW_PATH变量获取(嵌套模板时将会用到)
+
+views目录下可以按控制器划分子目录
+
+### 自动加载
+FoolPHP使用spl_autoload_register实现自动加载，当实例化一个类时，如果在EG(class_table)哈希表中找不到这个类，将调用自动加载注册的钩子函数，根据CONFIG_PATH下的fool_php_class.map找到这个类所在的文件，然后include
+
+所以当项目中新增、修改类时都需要执行"php tools/create_map.php"重新生成fool_php_class.map，这种方式使得项目的目录设置更灵活
+
+在项目中可以通过普通的方式实例化一个类:$user = new UserModel();
+
+同时框架提供了一个方法生成单例:Fool_Object::find(string $className)
+
 

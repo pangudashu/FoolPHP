@@ -77,7 +77,7 @@ APPLICATION_PATH : 应用目录
 CONFIG_PATH : 配置文件目录
 
 ### 控制器
-控制器类名、文件名没有要求，可以是任意名称(当然这不是一个好习惯)，只要继承了Fool_Controller的类就是一个控制器，控制器中操作(Action)作为请求处理的handler，操作的命名同样是以Action为后缀
+控制器名以Controller为后缀，文件名没有要求，可以是任意名称，只要继承了Fool_Controller的类就是一个控制器，控制器中操作(Action)作为请求处理的handler，通过/?m=controller.action访问将dispatch到此Action，操作的命名以Action为后缀
 
 	<?php
 	class DemoController extends Fool_Controller{
@@ -93,4 +93,29 @@ CONFIG_PATH : 配置文件目录
 	?>
 
 在控制中有两个前后置函数:preDispatch()、afterDispatch()分别在Action执行前后调用
+
+控制器方法
+
+	assign(string $key,void $value)  模板赋值
+	render([string $tpl_script])     渲染模板，将结果返回，不传参数默认调用views路径下"控制器/操作.tpl.php"
+	display([string $tpl_script])    渲染模板,结果直接输出
+	getController(void)              获取当前控制器名
+	getMethod(void)                  获取当前操作名
+
+### 配置
+CONFIG_PATH下有两个配置文件:项目配置(config.inc.php)、自动加载类配置(fool_php_class.map)，其中fool_php_class.map由tools/create_map.php脚本自动更新
+
+config.inc.php配置文件格式为普通的key=>value：
+
+	<?php
+	$title = "Welcome to FoolPHP~";
+	$db = array(
+		'host' => '127.0.0.1',
+		'user' => 'root',
+		'pass' => '',
+		'port' => 3306,
+	);
+
+在项目中通过Fool_Config::find(string $key)获取配置
+
 

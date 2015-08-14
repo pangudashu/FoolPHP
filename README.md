@@ -81,7 +81,7 @@ CONFIG_PATH : 配置文件目录
 
 	<?php
 	class DemoController extends Fool_Controller{
-		public function indexAction{
+		public function indexAction(){
 			$this->assign("content",$this->getContent());
 			$this->display();
 		}

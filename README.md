@@ -49,7 +49,7 @@ PHP扩展实现的轻量级MVC框架
 │   ├── config.inc.php<br />
 │   └── fool_php_class.map<br />
 └── www<br />
-    └── index.php<br />
+|    └── index.php<br />
 
 3./websites/src/www为web访问目录，配置web服务器root ：/websites/src/www，访问：http://Domain/index.php?m=demo.index
 
@@ -62,6 +62,35 @@ PHP扩展实现的轻量级MVC框架
 
 	使用此脚本执行 php create_map.php即可
 
+# 使用手册
 
+### 入口文件
+	//index.php,使用install.sh初始化的项目此文件位于/website/src/www/index.php
+	<?php
+	define('APPLICATION_PATH','/search/web/foolphp/src/application');
+	define('CONFIG_PATH','/search/web/foolphp/src/config');
 
+	$application = Fool_Application::getInstance(APPLICATION_PATH,CONFIG_PATH);
+	$application->run();
+
+APPLICATION_PATH : 应用目录
+CONFIG_PATH : 配置文件目录
+
+### 控制器
+控制器类名、文件名没有要求，可以是任意名称(当然这不是一个好习惯)，只要继承了Fool_Controller的类就是一个控制器，控制器中操作(Action)作为请求处理的handler，操作的命名同样是以Action为后缀
+
+	<?php
+	class DemoController extends Fool_Controller{
+		public function indexAction{
+			$this->assign("content",$this->getContent());
+			$this->display();
+		}
+
+		private function getContent(){
+			return "Hi~";
+		}
+	}
+	?>
+
+在控制中有两个前后置函数:preDispatch()、afterDispatch()分别在Action执行前后调用
 

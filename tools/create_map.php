@@ -93,9 +93,9 @@ class Autoload
 		$class = array();
 		foreach($lines as $line)
 		{
-			if(preg_match("/^\s*[cC]lass\s+(\S+)\s*/",$line,$match)) $class[] = $match[1];
-			if (preg_match("/^\s*abstract\s*class\s+(\S+)\s*/", $line, $match)) $class[] = $match[1];
-			if (preg_match("/^\s*interface\s+(\S+)\s*/", $line, $match)) $class[] = $match[1];
+			if(preg_match("/^\s*[cC]lass\s+(\S+)\s*/",$line,$match)) $class[] = trim($match[1],"{");
+			if (preg_match("/^\s*abstract\s*class\s+(\S+)\s*/", $line, $match)) $class[] = trim($match[1],"{");
+			if (preg_match("/^\s*interface\s+(\S+)\s*/", $line, $match)) $class[] = trim($match[1],"{");
 		}
 		return $class;
 	}/*}}}*/

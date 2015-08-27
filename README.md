@@ -18,7 +18,7 @@ PHP扩展实现的轻量级MVC框架
 * 原生php模板引擎
 
 ### 安装
-	从github下载源码后解压，如解压后目录:FoolPHP-1.0.0<br />
+	从github下载源码后解压，如解压后目录:FoolPHP-1.0.0
 	cd FoolPHP-1.0.0
 	phpize
 	./configure

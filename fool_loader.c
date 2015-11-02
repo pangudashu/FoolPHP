@@ -57,6 +57,7 @@ zval* fool_loader_instance(TSRMLS_D)
 /*}}}*/
 
 /*{{{ int fool_loader_register_autoload(zval* loader TSRMLS_DC)
+ * spl_autoload_register("autoload")
  */
 int fool_loader_register_autoload(zval* loader TSRMLS_DC)
 {

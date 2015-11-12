@@ -62,7 +62,7 @@ zval* fool_application_instance(TSRMLS_D)
 			return NULL;
 		}
 	
-		loader = fool_loader_instance(TSRMLS_C);	
+		loader = fool_loader_instance(TSRMLS_CC);	
 		if(!loader){
 			return NULL;
 		}

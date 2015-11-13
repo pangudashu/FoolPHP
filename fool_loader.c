@@ -100,12 +100,14 @@ int fool_loader_register_autoload(zval* loader TSRMLS_DC)
 		}
 		zval_ptr_dtor(&autoload);
 		efree(function);
+		efree(method_name);
 		return 0;
 	}
 	if(ret){
 		zval_ptr_dtor(&ret);
 	}
 	efree(function);
+	efree(method_name);
 	zval_ptr_dtor(&autoload);
 
 	return 1;

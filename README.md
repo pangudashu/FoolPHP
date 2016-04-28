@@ -1,7 +1,7 @@
 # FoolPHP
 PHP扩展实现的轻量级MVC框架
 
-[php7版本](https://github.com/pangudashu/FoolPHP7)
+[php7版本>>](https://github.com/pangudashu/FoolPHP7)
 
 ### 说明
 

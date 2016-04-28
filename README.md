@@ -1,11 +1,13 @@
 # FoolPHP
 PHP扩展实现的轻量级MVC框架
 
+[php7版本](https://github.com/pangudashu/FoolPHP7)
+
 ### 说明
 
-FoolPHP是我在学习PHP扩展开发的过程中作为练习作业同时阅读参考Yaf而实现的，所以有些代码就是Yaf的。[@Laruence](http://www.laruence.com/) [@Walu](http://www.walu.cc/)
+FoolPHP是在学习PHP扩展开发的过程中作为练习作业同时阅读参考Yaf而实现的，所以有些代码就是Yaf的。[@Laruence](http://www.laruence.com/) [@Walu](http://www.walu.cc/)
 
-这个框架的设计很简单，仅实现最核心的dispatcher。
+这个框架的比较简洁，仅实现最核心的dispatcher。
 
 ### 特点
 
